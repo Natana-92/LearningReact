@@ -5,14 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import colors from "./data/colors.json";
 
+import { ColorProvider } from "./customHook/color-hooks";
+
 export const ColorContext = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <ColorContext.Provider value={{ colors }}>
+        <ColorProvider>
             <App />
-        </ColorContext.Provider>
+        </ColorProvider>
     </React.StrictMode>
 );
 
